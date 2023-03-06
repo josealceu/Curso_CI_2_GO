@@ -10,7 +10,7 @@ jobs:
   test:
     runs-on: ${{ matrix.os }}
     env:
-      HOST: LOCALHOST,
+      HOST: LOCALHOST
       PORT: 5432
       USER: root
       PASSWORD: root
