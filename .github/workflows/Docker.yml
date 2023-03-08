@@ -8,24 +8,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-
     - name: Set Docker Build
+    - name: Docker Login
+      uses: docker/login-action@v2.1.0
+      with:
+        username: josealceu # user on DockerHub
+        password: ${{secrets.password}} # optional
+
       
-      
-  
-  build:
-    needs: test
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: ['ubuntu-latest', 'ubuntu-18.04']
-    steps:
-    - uses: actions/checkout@v3
-    - name: Build
-      run: go build -v main.go
-  
-  Docker:
-    needs: build
-    uses: ./.github/workflows/Docker.yml
-    
     
