@@ -18,5 +18,15 @@ jobs:
         username: josealceu # user on DockerHub
         password: ${{secrets.password}} # optional
 
-      
-    
+    - name: Build and push Docker images
+
+      uses: docker/build-push-action@v4.0.0
+      with:
+          context: .
+          file: ./Dockerfile
+
+          push: true 
+        
+          tags: josealceu/go-ci:${{github.ref_name}}
+
+
