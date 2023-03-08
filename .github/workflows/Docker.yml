@@ -27,8 +27,7 @@ jobs:
       # uses: cloudposse/github-action-docker-build-push@e2e648a687d73800bb0cfaa098ec8bf60f0bd4ac
       uses: cloudposse/github-action-docker-build-push@1.9.0
       with:
-        # List of a customs host-to-IP mapping (e.g., docker:10.180.0.1)
-       
+ 
         context: .
         file: ./Dockerfile
         push: true
