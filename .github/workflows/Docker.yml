@@ -31,4 +31,4 @@ jobs:
         context: .
         file: ./Dockerfile
         push: true
-        tags: josealceu/go_ci:${{github.ref_name}}
+        tags: josealceu/go_ci:latest
